@@ -50,6 +50,23 @@ function average(array) {
 
 console.log(average([12,15,17,20]));
 
+function calculMoyenne(tableau) {
+    const somme = tableau.reduce((previous, current) => previous + current);
+    return somme / tableau.length;
+}
+console.log(calculMoyenne([12, 16, 17]));
+
+const tableau = [1, 2, 3, 4, 5];
+
+function monForEach(tableau, callback) {
+    for (let i = 0; i < tableau.length; i++) {
+        callback(tableau[i], i)
+    }
+}
+monForEach(tableau, (el, position) => {
+    console.log(el);
+})
+
 function tree(x) {
     let star = "*"
     for (let i = 0; i <= x; i++) {
@@ -62,7 +79,7 @@ tree(10);
 
 function sapin(a) {
     let etoile = "*";
-  
+
     for (let index = 0; index < a; index++) {
       let ligne = "";
       for(let j = 0; j < a - index; j++){
@@ -73,3 +90,4 @@ function sapin(a) {
     }
   }
   sapin(15);
+
