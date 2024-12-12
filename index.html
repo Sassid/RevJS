@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="assets/js/functions.js" defer></script>
-    <script src="assets/js/classes.js" defer></script>
+    <!-- <script src="assets/js/functions.js" defer></script> -->
+    <!-- <script src="assets/js/classes.js" defer></script> -->
     <script src="assets/js/dom.js" defer></script>
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
     <header></header>
@@ -15,7 +16,27 @@
       <h1>Hello, World !!!</h1>
       <h2>Le DOM</h2>
       <div class="ma-classe">Div avec un classe</div>
-      <div id="monID">Div avec un id</div>
+      <p class="ma-classe">something kinda funny</p>
+      <div id="monID">
+        <p>bomshakalaka</p>
+      </div>
+      <p>capibara</p>
+      <input id="emailInput" type="text" placeholder="email" />
+      <input id="passwordInput" type="password" placeholder="mot de passe" />
+      <button id="monBouton">Valider</button>
+      <div id="message"></div>
+
+      <section class="todo-section">
+        <h2>Todo List</h2>
+        <input id="todoInput" type="text" />
+        <button id="todoButton">Ajouter</button>
+        <ul id="listContainer"></ul>
+      </section>
+
+      <section>
+        <h2>Game of Thrones</h2>
+        <div id="characters"></div>
+      </section>
     </main>
 
     <footer></footer>
