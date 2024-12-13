@@ -10,14 +10,33 @@ fetch('http://localhost:3000/api/users/me', {
         'Authorization': "Bearer " + token
     }
 }).then((reponse) => {
-    reponse.json().then((donner) => {
-        console.log(donner);
+    reponse.json().then((data) => {
+        console.log(data);
         
-        document.querySelector('#userEmail').textContent = donner.data.user.email;
-        document.querySelector('#userUsername').textContent = donner.data.user.username;
+        document.querySelector('#userEmail').textContent = data.data.user.email;
+        document.querySelector('#userUsername').textContent = data.data.user.username;
 
-        if(donner.data.user.avatarUrl){
-            document.querySelector('#user-avatar').src = donner.data.user.avatarUrl;
+        if(data.data.user.avatarUrl){
+            document.querySelector('#userAvatar').src = data.data.user.avatarUrl;
         }
     })
+})
+
+document.querySelector('#avatarButton').addEventListener('click', (e) => {
+    e.preventDefault()
+    console.log('object')
+    let url = document.querySelector('#avatarInput').value;
+
+    fetch('http://localhost:3000/api/users/me', {
+        method: 'PATCH',
+        headers: {
+            'Authorization': "Bearer " + token,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ avatarUrl: url })
+    }).then((reponse) => {
+        console.log(reponse);
+        window.location.href = "/profile.html"
+    })
+
 })
