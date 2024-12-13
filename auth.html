@@ -4,16 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Connecte-toi</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/navbar.js" defer></script>
+    <script src="assets/js/register.js" defer></script>
+    <script src="assets/js/login.js" defer></script>
   </head>
   <body>
     <header>
       <nav>
-        <img src="assets/img/logo.svg" alt="logo" width="30px" />
-        <ul>
+        <img class="logo" src="assets/img/logo.svg" alt="logo" width="30px" />
+        <ul id="menu" class="menu">
           <li><a href="/">Accueil</a></li>
           <li><a href="/auth.html">Connexion</a></li>
         </ul>
+        <img class="burger" id="burger" src="assets/img/burger.svg" alt="burger menu icon" width="20px">
       </nav>
     </header>
+
+    <main>
+        <section>
+            <h1>Connexion</h1>
+        </section>
+
+        <section class="inscription" id="registerSection">
+            <h2>Inscription</h2>
+
+            <input type="text" placeholder="your username here" name="username" id="registerUsernameInput">
+            <p id="registerUsernameError"></p>
+
+            <input type="email" placeholder="your email here" name="email" id="registerEmailInput">
+            <p id="registerEmailError"></p>
+
+            <input type="password" placeholder="your password here" name="password" id="registerPasswordInput">
+            <p id="registerPasswordError"></p>
+
+            <button id="registerSubmit">Entrer</button>
+        </section>
+
+        <section class="connexion" id="loginSection">
+            <h2>Connexion</h2>
+
+            <input type="email" placeholder="your email here" name="email" id="loginEmailInput">
+            <p id="loginEmailError"></p>
+
+            <input type="password" placeholder="your passwordhere" name="password" id="loginPasswordInput">
+            <p id="loginPasswordError"></p>
+
+            <button id="loginSubmit">Entrer</button>
+        </section>
+    </main>
   </body>
 </html>
